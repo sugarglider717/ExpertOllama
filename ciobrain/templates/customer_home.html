@@ -1,0 +1,21 @@
+{% extends "shared_base.html" %}
+{% block title %}Customer Home{% endblock %}
+{% block content %}
+<h2 class="centered-title">CIO Brain</h2>
+<div class="customer-dashboard">
+    <div class="rag-toggle-container">
+        <label class="toggle-label" for="rag-toggle">Use RAG (Retrieval-Augmented Generation)</label>
+	<input type="checkbox" id="rag-toggle" />
+    </div>
+    <div id="terminal" class="terminal-display">
+        <div id="scroll-container">
+        </div>
+        <div class="prompt-line">
+            <span class="prompt-prefix">[~]</span>
+            <textarea autofocus id="prompt" rows="3"></textarea>
+        </div>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/terminal.js') }}"></script>
+{% endblock %}
+

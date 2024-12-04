@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="main-wrapper">
+    <header>
+	<nav>
+	    <ul>
+	        <li><a href="{{ url_for('home') }}">Home</a></li>
+	        <li><a href="{{ url_for('admin.home') }}">Admin</a></li>
+	        <li><a href="{{ url_for('customer.home') }}">Customers</a></li>
+	    </ul>
+	</nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CIO-Brain</p>
+    </footer>
+</div>
+</body>
+</html>
+

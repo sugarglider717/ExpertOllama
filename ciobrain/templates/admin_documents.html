@@ -1,0 +1,68 @@
+{% extends "shared_base.html" %}
+
+{% block title %}Document Management{% endblock %}
+
+{% block content %}
+<h2 class="centered-title">Document Management</h2>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class="flash-messages">
+      {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<!-- Outer container for Upload and Directory Display -->
+<div class="outer-container">
+
+    <!-- Upload Section -->
+    <div class="upload-section">
+        <h3>Upload a Document</h3>
+        <form action="{{ url_for('admin.documents.upload_document') }}" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+
+    <!-- Directory Display Section -->
+    <div class="directories">
+
+        <div class="directory" id="original-uploads">
+            
+            <h3>Uploads</h3>
+            <ul>
+                {% for doc in directories.original_uploads %}
+                    <li>{{ doc }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="directory" id="in-progress">
+            <h3>In Progress</h3>
+            <ul>
+                {% for doc in directories.in_progress %}
+                    <li>{{ doc }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="directory" id="final-staging">
+            <h3>Final Staging</h3>
+            <ul>
+                {% for doc in directories.final_staging %}
+                    <li>{{ doc }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+	<form action="{{ url_for('admin.documents.process_handbook') }}" method="POST">
+	    <button type="submit" class="btn btn-primary"> Process Handbook</button>
+	</form>
+
+</div>
+{% endblock %}
+

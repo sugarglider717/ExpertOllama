@@ -1,0 +1,30 @@
+{% extends "shared_base.html" %} 
+
+{% block title %}Admin Home{% endblock %}
+
+{% block content %}
+<h2 class="centered-title">Admin</h2>
+
+<div class="admin-sections">
+
+    <a href="{{ url_for('admin.documents.home') }}" class="section-link">
+        <div class="section">
+            <h3>Documents</h3>
+        </div>
+    </a>
+
+    <a href="#" class="section-link">
+        <div class="section">
+            <h3>Accounts</h3>
+        </div>
+    </a>
+
+    <a href="#" class="section-link">
+        <div class="section">
+            <h3>Tests</h3>
+        </div>
+    </a>
+</div>
+
+{% endblock %}
+
