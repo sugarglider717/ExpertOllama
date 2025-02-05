@@ -1,4 +1,4 @@
-# UT Dallas Software Engineering Capstone Project
+# UT Dallas Software Engineering Project
 ## Group 4 - Spring 2025
 
 ### Instructions
