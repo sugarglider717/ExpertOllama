@@ -1,5 +1,5 @@
 # UT Dallas Software Engineering Capstone Project
-## Team 7 - Fall 2024
+## Group 4 - Spring 2025
 
 ### Instructions
 1. Clone the project and navigate to the project directory.
